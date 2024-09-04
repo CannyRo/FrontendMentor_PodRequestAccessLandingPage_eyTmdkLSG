@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    /* == Fonts == */
+    --main-font: 'Chivo';
+    /* == Colors == */
+    --green : hsl(157, 74%, 62%);
+    --blue-950 : hsl(224, 35%, 11%);
+    --blue-900 : hsl(225, 26%, 23%);
+    --blue-600 : hsl(225, 21%, 45%);
+    --blue-300 : hsl(225, 40%, 83%);
+    --white : hsl(0, 0%, 100%);
+    --red : hsl(0, 96%, 61%);
+}
