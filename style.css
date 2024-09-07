@@ -167,3 +167,20 @@
     text-decoration: none;
     color: var(--green);
 }
+@media(min-width: 768px){
+    .body__container{
+        align-items: start;
+        padding: 44px;
+    }
+    .body__container::before{
+        background-image: url('./assets/bg-raw-multiply.png');
+        background-repeat: no-repeat;
+        background-size: auto 868px;
+        background-position: top right -1px;
+        opacity: 100%;
+    }
+    .footer{
+        width: 100%;
+        justify-content: center;
+    }
+}
