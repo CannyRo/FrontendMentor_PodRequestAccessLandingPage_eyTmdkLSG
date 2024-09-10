@@ -196,6 +196,7 @@
 }
 @media(min-width: 768px){
     .body__container{
+        min-height: 1024px;
         overflow: visible;
         overflow-x: hidden;
     }
@@ -203,8 +204,10 @@
         align-items: start;
         justify-content: center;
         padding: 44px;
+        min-height: 1024px;
     }
     .page__container::before{
+        min-height: 1024px;
         background-image: url('./assets/desktop/bg-pattern-dots.svg'), url('./assets/bg-raw-multiply.png');
         background-repeat: no-repeat, no-repeat;
         background-size: auto 104px, auto 868px;
@@ -218,7 +221,7 @@
         left: 0;
         bottom: 0;
         width: 39.90%;
-        height: 100vh;
+        min-height: 1024px;
         background-color: var(--blue-950);
     }
     .header{
