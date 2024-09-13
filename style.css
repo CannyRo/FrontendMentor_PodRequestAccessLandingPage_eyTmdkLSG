@@ -118,6 +118,7 @@
 .form{
     grid-area: form;
     z-index: 2;
+    position: relative;
 }
 .input--email{
     margin-bottom: 8px;
@@ -159,6 +160,7 @@
     background-color: var(--green-hover);
 }
 .error__msg{
+    position: absolute;
     margin-top: 8px;
     width: 100%;
     text-align: center;
