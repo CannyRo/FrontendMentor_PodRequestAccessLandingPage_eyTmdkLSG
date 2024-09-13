@@ -2,9 +2,8 @@ function app() {
   //Get DOM variables and listener
   const formNode = document.getElementById("myForm");
   const inputNode = document.getElementById("myInput");
-
-  const errorMessages = ["Oops! Please add your email", "Oops! Please check your email"];
-
+  const messageContainer = document.getElementById("myError");
+  // const errorMessages = ["Oops! Please add your email", "Oops! Please check your email"];
   let message = '';
   // Init functions sequence
   Init();
@@ -21,34 +20,34 @@ function app() {
       console.log(e.target.value);
     });
   }
-  function submitForm() {
-    message = '';
-    formNode.addEventListener("submit", (e) => {
-      console.log("Submit on process");
-      console.log("inputNode.value => ", inputNode.value);
-      if(inputNode.value !== undefined && inputNode.value !== null && inputNode.value !== ''){
-        console.log("Value is checking");
-        console.log(inputNode.value);
-        if( isEmail(inputNode.value)){
-            console.log("C'est un email");
-        } else {
-            e.preventDefault();
-            console.log("NON ce n'est un email");
-        }
-      }  else {
-        e.preventDefault();
-        console.log("Oops! Please add your email");
-      }
-    });
-  }
   function isEmail(value) {
-    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
     if(value.match(emailRegex)){
         return true;
     } else {
         return false;
     }
   }
-
+  function injectMessage(msg) {
+    messageContainer.textContent = msg;
+  }
+  function submitForm() {
+    message = '';
+    formNode.addEventListener("submit", (e) => {
+      if(inputNode.value !== undefined && inputNode.value !== null && inputNode.value !== ''){
+        if(!isEmail(inputNode.value)){
+            e.preventDefault();
+            message = "Oops! Please check your email";
+            injectMessage(message);
+        } else {
+            console.log("Request sended with success.");
+        }
+      }  else {
+        e.preventDefault();
+        message = "Oops! Please add your email";
+        injectMessage(message);
+      }
+    });
+  }
 }
 window.addEventListener("load", app);
