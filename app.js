@@ -31,6 +31,9 @@ function app() {
   function injectMessage(msg) {
     messageContainer.textContent = msg;
   }
+  function addClassError() {
+    inputNode.classList.add("input--email-error")
+  }
   function submitForm() {
     message = '';
     formNode.addEventListener("submit", (e) => {
@@ -39,6 +42,7 @@ function app() {
             e.preventDefault();
             message = "Oops! Please check your email";
             injectMessage(message);
+            addClassError();
         } else {
             console.log("Request sended with success.");
         }
@@ -46,6 +50,7 @@ function app() {
         e.preventDefault();
         message = "Oops! Please add your email";
         injectMessage(message);
+        addClassError();
       }
     });
   }
