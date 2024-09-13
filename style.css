@@ -5,6 +5,7 @@
     /* == Colors == */
     --green : hsl(157, 74%, 62%);
     --green-014 : hsla(157, 74%, 62%, 0.14);
+    --green-hover : hsl(157, 75%, 81%);
     --blue-950 : hsl(224, 35%, 11%);
     --blue-900 : hsl(225, 26%, 23%);
     --blue-600 : hsl(225, 21%, 45%);
@@ -152,6 +153,10 @@
     border: none;
     border-radius: 99px;
     box-shadow: 0 2px 4px var(--green-014);
+    cursor: pointer;
+}
+.btn:hover, .btn:focus, .btn:active{
+    background-color: var(--green-hover);
 }
 .error__msg{
     margin-top: 8px;

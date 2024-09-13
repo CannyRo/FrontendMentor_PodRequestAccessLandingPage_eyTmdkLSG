@@ -28,12 +28,12 @@
         <img src="./assets/desktop/google-podcasts.svg" alt="Google Podcasts logo" class="platform--item platform--item-google">
         <img src="./assets/desktop/pocket-casts.svg" alt="Pocket Casts logo" class="platform--item platform--item-pocket">
       </div>
-      <form action="" class="form">
+      <form action="" class="form" id="myForm">
         <div class="input--group">
-          <input type="email" name="email" id="email" class="input--email" placeholder="Email address">
-          <button type="button" class="btn">Request access</button>
+          <input type="text" name="email" id="myInput" class="input--email" placeholder="Email address">
+          <button type="submit" form="myForm" id="mySubmit" class="btn">Request access</button>
         </div>
-        <p class="error__msg">Oops! Please check you email address</p>
+        <p id="error__container" class="error__msg"></p>
       </form>
     </div>
   </main>
@@ -46,5 +46,6 @@
       <p>Coded by <a href="https://cannyro.github.io/hire_mr_canny/en" class="footer--link">WhatCannyDev</a>.</p>
     </div>
   </footer>
+  <script src="app.js"></script>
 </body>
 </html>
